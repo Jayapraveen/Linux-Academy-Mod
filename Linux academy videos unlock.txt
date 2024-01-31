@@ -1,0 +1,19 @@
+Linux academy mod
+
+1. patch content.smali in com/linuxacademy/linuxacademy/model/content
+
+2. Add the following before "parameter registers" assigning to local variables 
+	
+	const/4 v4, 0x0
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    move-object/from16 p19, v4
+
+    move-object v3, p1
+
+3. Exploits the ability to view videos by setting "cost" parameter in algolia search api call to 0
+
+ 
